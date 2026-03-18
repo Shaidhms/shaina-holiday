@@ -45,17 +45,27 @@
   .hero-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   .hero-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 220px;
+    min-width: 220px;
+    height: auto;
+    max-height: 320px;
     object-fit: cover;
     object-position: top center;
-    border: 4px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    margin-bottom: 16px;
+    border-radius: 20px;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+  }
+
+  .hero-text {
+    flex: 1;
   }
 
   .hero h1 {
@@ -785,7 +795,9 @@
   }
 
   @media (max-width: 600px) {
-    .hero-photo { width: 140px; height: 140px; }
+    .hero-content { flex-direction: column; text-align: center; gap: 20px; }
+    .hero-photo { width: 160px; min-width: 160px; }
+    .hero-text div[style] { justify-content: center; }
     .hero h1 { font-size: 2.4rem; }
     .calendar-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .day-card { padding: 12px; }
@@ -807,26 +819,28 @@
 <div class="hero">
   <div class="hero-content">
     <img src="abba-shaina.png" alt="Abba & Shaina" class="hero-photo">
-    <h1>Shaina's Holiday Planner!</h1>
-    <p class="subtitle">Short break + Summer vacation with Abba</p>
+    <div class="hero-text">
+      <h1>Shaina's Holiday Planner!</h1>
+      <p class="subtitle">Short break + Summer vacation with Abba</p>
 
-    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
-      <div class="date-badge">Short Break: Mar 19 - Apr 5</div>
-      <div class="date-badge" style="background: rgba(72,187,120,0.25); border-color: rgba(72,187,120,0.4);">Summer: Apr 23 - Jun 3</div>
-    </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+        <div class="date-badge">Short Break: Mar 19 - Apr 5</div>
+        <div class="date-badge" style="background: rgba(72,187,120,0.25); border-color: rgba(72,187,120,0.4);">Summer: Apr 23 - Jun 3</div>
+      </div>
 
-    <div class="countdown">
-      <div class="countdown-item">
-        <span class="num">18</span>
-        <span class="label">Short Break</span>
-      </div>
-      <div class="countdown-item" style="background: rgba(72,187,120,0.15);">
-        <span class="num">42</span>
-        <span class="label">Summer Days</span>
-      </div>
-      <div class="countdown-item">
-        <span class="num">60</span>
-        <span class="label">Total Days</span>
+      <div class="countdown">
+        <div class="countdown-item">
+          <span class="num">18</span>
+          <span class="label">Short Break</span>
+        </div>
+        <div class="countdown-item" style="background: rgba(72,187,120,0.15);">
+          <span class="num">42</span>
+          <span class="label">Summer Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="num">60</span>
+          <span class="label">Total Days</span>
+        </div>
       </div>
     </div>
   </div>
