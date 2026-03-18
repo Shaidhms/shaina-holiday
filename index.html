@@ -279,6 +279,81 @@
     color: #ecc94b;
   }
 
+  /* Checklist */
+  .checklist {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 20px;
+  }
+
+  .checklist h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: #f6ad55;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .checklist-item:last-child { border-bottom: none; }
+
+  .checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: #48bb78;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .checklist-item .item-content {
+    flex: 1;
+  }
+
+  .checklist-item .item-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .checklist-item .item-detail {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .checklist-item .item-deadline {
+    font-size: 0.65rem;
+    color: #f6ad55;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .task-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(246, 173, 85, 0.12);
+    color: #f6ad55;
+    border: 1px solid rgba(246, 173, 85, 0.25);
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
   /* Footer */
   .footer {
     text-align: center;
@@ -355,8 +430,9 @@
       <span class="day-num">4</span>
       <div class="day-name">Sunday</div>
       <div class="date">Mar 22</div>
-      <div class="activity">Cook something together. Movie night at home.</div>
-      <span class="tag fun">Fun</span>
+      <div class="task-badge">Swimming Center Visit 9-11 AM</div>
+      <div class="activity">Visit swimming center, enroll Shaina & self. Movie night.</div>
+      <span class="tag special">Special</span>
     </div>
 
     <div class="day-card">
@@ -373,7 +449,8 @@
       <div class="day-name">Tuesday</div>
       <div class="date">Mar 24</div>
       <div class="quran-badge">Quran Class 5-5:30 PM</div>
-      <div class="activity">Story time + crafts after class</div>
+      <div class="task-badge">Aadhaar Card</div>
+      <div class="activity">Book Aadhaar appointment. Gather docs: birth cert, school ID.</div>
       <span class="tag learn">Learn</span>
     </div>
 
@@ -434,8 +511,9 @@
       <div class="day-name">Tuesday</div>
       <div class="date">Mar 31</div>
       <div class="quran-badge">Quran Class 5-5:30 PM</div>
-      <div class="activity">Puzzle night or card games</div>
-      <span class="tag fun">Fun</span>
+      <div class="task-badge">Passport Application</div>
+      <div class="activity">Register on passportindia.gov.in, fill minor passport form.</div>
+      <span class="tag learn">Learn</span>
     </div>
 
     <div class="day-card">
@@ -569,6 +647,69 @@
 
   <div class="budget-note">
     <strong>Budget-friendly approach:</strong> Most activities are free or low-cost (parks, home crafts, cooking, cycling). Save the budget for 1-2 special weekend outings. Shaina picking her own outing on Day 17 makes it feel extra special without needing to spend on everything.
+  </div>
+</div>
+
+<!-- Holiday Checklist -->
+<div class="section">
+  <div class="section-title">Holiday Checklist</div>
+  <div class="checklist">
+    <h3>Must Complete (18 Days)</h3>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c1">
+      <div class="item-content">
+        <div class="item-title">Visit Swimming Center & Enroll</div>
+        <div class="item-detail">Explore timings, fees, batches. Enroll both Shaina and Abba. Get swimming gear.</div>
+      </div>
+      <div class="item-deadline">Sun, Mar 22</div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c2">
+      <div class="item-content">
+        <div class="item-title">Shaina's Aadhaar Card - Book Appointment</div>
+        <div class="item-detail">Book slot at uidai.gov.in. Gather: birth certificate, school ID, parent's Aadhaar.</div>
+      </div>
+      <div class="item-deadline">By Mar 24</div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c3">
+      <div class="item-content">
+        <div class="item-title">Shaina's Aadhaar Card - Visit Center</div>
+        <div class="item-detail">Take Shaina to Aadhaar center. Complete biometrics and form submission.</div>
+      </div>
+      <div class="item-deadline">By Mar 28</div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c4">
+      <div class="item-content">
+        <div class="item-title">Shaina's Passport - Online Application</div>
+        <div class="item-detail">Register on passportindia.gov.in. Fill minor passport form (fresh). Pay fees online.</div>
+      </div>
+      <div class="item-deadline">By Mar 31</div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c5">
+      <div class="item-content">
+        <div class="item-title">Shaina's Passport - PSK Visit</div>
+        <div class="item-detail">Book PSK appointment. Documents: birth certificate, Aadhaar, parent's passport, address proof. Visit with Shaina.</div>
+      </div>
+      <div class="item-deadline">By Apr 5</div>
+    </div>
+
+    <div class="checklist-item">
+      <input type="checkbox" id="c6">
+      <div class="item-content">
+        <div class="item-title">Start Swimming Classes</div>
+        <div class="item-detail">Both Shaina and Abba attend first swimming class together.</div>
+      </div>
+      <div class="item-deadline">By Apr 5</div>
+    </div>
+
   </div>
 </div>
 
