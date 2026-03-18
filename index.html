@@ -140,6 +140,38 @@
     gap: 10px;
   }
 
+  .collapsible {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .collapsible-trigger {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  .collapsible-trigger::-webkit-details-marker { display: none; }
+  .collapsible-trigger::marker { display: none; content: ''; }
+
+  .collapsible-trigger .section-title { margin-bottom: 0; }
+
+  .collapsible-trigger .chev {
+    transition: transform 0.3s ease;
+    opacity: 0.3;
+    flex-shrink: 0;
+  }
+
+  details.collapsible[open] .chev { transform: rotate(180deg); }
+
+  .collapsible-body {
+    padding-bottom: 20px;
+  }
+
   .calendar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -847,8 +879,12 @@
 </div>
 
 <!-- 18-Day Calendar -->
-<div class="section">
-  <div class="section-title">18-Day Calendar</div>
+<details class="collapsible" open>
+  <summary class="collapsible-trigger">
+    <div class="section-title">18-Day Calendar</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
   <div class="calendar-grid">
 
     <div class="day-card">
@@ -1011,7 +1047,8 @@
     </div>
 
   </div>
-</div>
+  </div>
+</details>
 
 <!-- School Fee & Key Dates -->
 <div class="fee-banner">
@@ -1106,8 +1143,12 @@
 </div>
 
 <!-- Activity Ideas -->
-<div class="section">
-  <div class="section-title">Activity Ideas by Category</div>
+<details class="collapsible">
+  <summary class="collapsible-trigger">
+    <div class="section-title">Activity Ideas by Category</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
   <div class="ideas-grid">
 
     <div class="idea-card">
@@ -1191,11 +1232,16 @@
   <div class="budget-note">
     <strong>Budget-friendly approach:</strong> Most activities are free or low-cost (parks, home crafts, cooking, cycling). Save the budget for 1-2 special weekend outings. Shaina picking her own outing on Day 17 makes it feel extra special without needing to spend on everything.
   </div>
-</div>
+  </div>
+</details>
 
 <!-- Holiday Checklist -->
-<div class="section">
-  <div class="section-title">Holiday Checklist</div>
+<details class="collapsible" open>
+  <summary class="collapsible-trigger">
+    <div class="section-title">Holiday Checklist</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
   <div class="checklist">
     <h3>Must Complete (18 Days)</h3>
 
@@ -1281,10 +1327,16 @@
     </div>
 
   </div>
-</div>
+  </div>
+</details>
 
 <!-- Summer Vacation Plan -->
-<div class="section">
+<details class="collapsible">
+  <summary class="collapsible-trigger">
+    <div class="section-title">Summer Vacation Plan (Apr 23 - Jun 3)</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
   <div class="summer-header">
     <h2>Summer Vacation Plan</h2>
     <p>Apr 23 - Jun 3, 2026 (42 days)</p>
@@ -1370,12 +1422,17 @@
     </div>
 
   </div>
-</div>
+  </div>
+</details>
 
 <!-- Key Goals - Pictorial -->
-<div class="goals-section">
-  <div class="goals-title">Key Goals for Shaina</div>
-  <div class="goals-subtitle">Everything we want to achieve across both breaks</div>
+<details class="collapsible" open>
+  <summary class="collapsible-trigger">
+    <div class="section-title">Key Goals for Shaina</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
+  <div class="goals-subtitle" style="font-size: 0.85rem; opacity: 0.5; margin-bottom: 24px;">Everything we want to achieve across both breaks</div>
 
   <div class="goals-grid">
 
@@ -1520,11 +1577,16 @@
   <div class="goals-footer-note">
     These are the key milestones for Shaina's holiday and summer break. We'll detail the summer plan closer to April.
   </div>
-</div>
+  </div>
+</details>
 
 <!-- Holiday Journal -->
-<div class="journal-section">
-  <div class="journal-title">Holiday Journal</div>
+<details class="collapsible" open>
+  <summary class="collapsible-trigger">
+    <div class="section-title">Holiday Journal</div>
+    <svg class="chev" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </summary>
+  <div class="collapsible-body">
 
   <div class="journal-entry">
     <div class="journal-date">March 19, 2026</div>
@@ -1535,7 +1597,8 @@
     <span class="journal-tag">First time!</span>
   </div>
 
-</div>
+  </div>
+</details>
 
 <div class="footer">
   Made with love by Nisha for Abba & Shaina
