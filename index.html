@@ -403,9 +403,13 @@
 
   .fee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .fee-grid.two-col {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .fee-box {
@@ -425,7 +429,7 @@
   }
 
   .fee-box .fee-amount {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: #667eea;
   }
@@ -511,6 +515,12 @@
     .countdown { gap: 10px; }
     .countdown-item { padding: 12px 16px; min-width: 70px; }
     .countdown-item .num { font-size: 1.5rem; }
+    .fee-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .fee-box .fee-amount { font-size: 1.1rem; }
+    .fee-box { padding: 14px; }
+    .fee-total-strip { flex-direction: column; text-align: center; gap: 4px; }
+    .fee-dates { grid-template-columns: 1fr; }
+    .fee-card { padding: 20px; }
   }
 </style>
 </head>
@@ -568,17 +578,22 @@
       </div>
     </div>
 
-    <div class="fee-grid">
+    <div class="fee-grid two-col">
       <div class="fee-box">
-        <div class="fee-label">Uniform (2 sets - Girls)</div>
+        <div class="fee-label">Uniform - 2 Sets (Girls)</div>
         <div class="fee-amount highlight">Rs. 1,800</div>
         <div class="fee-note">Cash only</div>
       </div>
       <div class="fee-box">
-        <div class="fee-label">Uniform (1 set - Girls)</div>
+        <div class="fee-label">Uniform - 1 Set (Girls)</div>
         <div class="fee-amount" style="color: rgba(255,255,255,0.3)">Rs. 1,000</div>
         <div class="fee-note">Cash only</div>
       </div>
+    </div>
+
+    <div class="fee-total-strip" style="margin-bottom: 12px;">
+      <span class="strip-label">Tuition (3 terms) + Uniform (2 sets) - Full Year</span>
+      <span class="strip-amount">Rs. 75,300</span>
     </div>
 
     <div class="fee-total-strip">
