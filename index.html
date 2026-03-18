@@ -500,6 +500,110 @@
     color: #48bb78;
   }
 
+  /* Summer Section */
+  .summer-header {
+    background: linear-gradient(135deg, #276749 0%, #2f855a 50%, #38a169 100%);
+    border-radius: 24px 24px 0 0;
+    padding: 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summer-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 25px 25px;
+  }
+
+  .summer-header h2 {
+    position: relative;
+    font-size: 1.8rem;
+    font-family: 'Caveat', cursive;
+    margin-bottom: 4px;
+  }
+
+  .summer-header p {
+    position: relative;
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
+
+  .summer-body {
+    background: linear-gradient(145deg, #1a2e1a, #162e16);
+    border-radius: 0 0 24px 24px;
+    padding: 32px;
+    border: 1px solid rgba(72, 187, 120, 0.15);
+    border-top: none;
+  }
+
+  .summer-phase {
+    margin-bottom: 28px;
+  }
+
+  .summer-phase:last-child { margin-bottom: 0; }
+
+  .summer-phase h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #48bb78;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .summer-phase h3 .phase-dates {
+    font-size: 0.65rem;
+    font-weight: 400;
+    opacity: 0.5;
+    letter-spacing: 1px;
+  }
+
+  .summer-ideas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .summer-idea {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.4;
+  }
+
+  .summer-idea strong {
+    color: #48bb78;
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .summer-idea span {
+    opacity: 0.6;
+    font-size: 0.72rem;
+  }
+
+  .summer-note {
+    background: linear-gradient(135deg, rgba(72,187,120,0.1), rgba(56,178,172,0.1));
+    border: 1px solid rgba(72,187,120,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 24px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .summer-note strong { color: #48bb78; }
+
   /* Footer */
   .footer {
     text-align: center;
@@ -529,21 +633,26 @@
 <!-- Hero Banner -->
 <div class="hero">
   <div class="hero-content">
-    <h1>Shaina's Holiday Break!</h1>
-    <p class="subtitle">18 days of fun, learning, and bonding with Abba</p>
-    <div class="date-badge">Mar 19 - Apr 5, 2026</div>
+    <h1>Shaina's Holiday Planner!</h1>
+    <p class="subtitle">Short break + Summer vacation with Abba</p>
+
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
+      <div class="date-badge">Short Break: Mar 19 - Apr 5</div>
+      <div class="date-badge" style="background: rgba(72,187,120,0.25); border-color: rgba(72,187,120,0.4);">Summer: Apr 23 - Jun 3</div>
+    </div>
+
     <div class="countdown">
       <div class="countdown-item">
         <span class="num">18</span>
-        <span class="label">Days</span>
+        <span class="label">Short Break</span>
+      </div>
+      <div class="countdown-item" style="background: rgba(72,187,120,0.15);">
+        <span class="num">42</span>
+        <span class="label">Summer Days</span>
       </div>
       <div class="countdown-item">
-        <span class="num">4</span>
-        <span class="label">Weekends</span>
-      </div>
-      <div class="countdown-item">
-        <span class="num">13</span>
-        <span class="label">Evenings</span>
+        <span class="num">60</span>
+        <span class="label">Total Days</span>
       </div>
     </div>
   </div>
@@ -957,6 +1066,91 @@
         <div class="item-detail">Both Shaina and Abba attend first swimming class together.</div>
       </div>
       <div class="item-deadline">By Apr 5</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Summer Vacation Plan -->
+<div class="section">
+  <div class="summer-header">
+    <h2>Summer Vacation Plan</h2>
+    <p>Apr 23 - Jun 3, 2026 (42 days)</p>
+  </div>
+  <div class="summer-body">
+
+    <div class="summer-phase">
+      <h3>Phase 1: Settle In & Skill Up <span class="phase-dates">Apr 23 - May 3 (11 days)</span></h3>
+      <div class="summer-ideas">
+        <div class="summer-idea">
+          <strong>Swimming (daily)</strong>
+          <span>Continue classes with Abba. Build confidence in water.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Quran Classes (Mon-Fri)</strong>
+          <span>Continue 5-5:30 PM at Masjid-e Zohra.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Learn to Code</strong>
+          <span>Scratch / Code.org. 30 min/day. Build a small game by end of phase.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Reading Challenge</strong>
+          <span>Pick 3-4 books for the summer. Start a reading log.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="summer-phase">
+      <h3>Phase 2: Explore & Create <span class="phase-dates">May 4 - May 18 (15 days)</span></h3>
+      <div class="summer-ideas">
+        <div class="summer-idea">
+          <strong>Art & Craft Projects</strong>
+          <span>Painting, origami, DIY gifts. Try a new craft each week.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Cooking with Abba</strong>
+          <span>Learn 4-5 simple recipes. Bake something on weekends.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Science Experiments</strong>
+          <span>Weekly experiments from YouTube. Keep a science journal.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Weekend Outings</strong>
+          <span>Beach trips, museums, Birla Planetarium, Crocodile Bank, VGP.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Nature Journaling</strong>
+          <span>Draw plants, birds, insects around Cosmo City.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="summer-phase">
+      <h3>Phase 3: Wind Down & Prep <span class="phase-dates">May 19 - Jun 3 (16 days)</span></h3>
+      <div class="summer-ideas">
+        <div class="summer-idea">
+          <strong>Back-to-School Prep</strong>
+          <span>Cover books, label stationery, organize bag and desk.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Revision & Practice</strong>
+          <span>Light revision of Grade I concepts. Handwriting practice.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Family Time</strong>
+          <span>Movie marathons, board game tournaments, letter writing.</span>
+        </div>
+        <div class="summer-idea">
+          <strong>Summer Scrapbook</strong>
+          <span>Compile photos, drawings, and memories from the whole vacation.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="summer-note">
+      <strong>Daily Routine (tentative):</strong> Morning swimming, free play, lunch, Quran class (5-5:30 PM), evening activity with Abba. Weekends for outings and family time. This plan will be detailed closer to the summer break.
     </div>
 
   </div>
