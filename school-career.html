@@ -39,17 +39,30 @@
     background: linear-gradient(145deg, #1a1a2e, #16213e); border-radius: 24px;
     overflow: hidden; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px;
   }
-  .year-header {
+
+  .year-summary {
     padding: 24px 28px; display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 12px;
+    cursor: pointer; flex-wrap: wrap; gap: 12px; list-style: none;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
   }
-  .year-header h2 { font-size: 1.2rem; font-weight: 700; }
-  .year-header .grade-badge {
+  .year-summary::-webkit-details-marker { display: none; }
+  .year-summary::marker { display: none; content: ''; }
+  .year-summary h2 { font-size: 1.2rem; font-weight: 700; }
+  .year-summary .grade-badge {
     font-size: 0.65rem; padding: 4px 14px; border-radius: 20px;
     background: rgba(102,126,234,0.15); color: #667eea; font-weight: 600;
     letter-spacing: 1px; text-transform: uppercase;
   }
-  .year-header .year-total { font-size: 1.4rem; font-weight: 800; color: #f6ad55; }
+  .year-summary .year-total { font-size: 1.4rem; font-weight: 800; color: #f6ad55; }
+  .year-summary .toggle-hint {
+    font-size: 0.6rem; opacity: 0.35; text-transform: uppercase; letter-spacing: 1px;
+    width: 100%; margin-top: -4px;
+  }
+  .year-details[open] .toggle-hint { display: none; }
+  .year-summary .chevron {
+    transition: transform 0.3s ease; display: inline-block; opacity: 0.4;
+  }
+  .year-details[open] .chevron { transform: rotate(180deg); }
 
   .fee-table-section { padding: 24px 28px; }
   .fee-table-section h3 {
@@ -144,14 +157,20 @@
   </a>
 
   <!-- Grade I -->
-  <div class="year-card">
-    <div class="year-header">
+  <details class="year-card year-details">
+    <summary class="year-summary">
       <div>
         <h2>2025-26</h2>
         <span class="grade-badge">Grade I</span>
       </div>
-      <div class="year-total">Rs. 1,10,762</div>
-    </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="year-total">Rs. 1,10,762</div>
+        <span class="chevron">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <div class="toggle-hint">Tap to view breakdown</div>
+    </summary>
 
     <div class="fee-table-section">
       <h3>Tuition Fees</h3>
@@ -247,17 +266,23 @@
       <span class="gt-label">Grade I Total</span>
       <span class="gt-amount">Rs. 1,10,762</span>
     </div>
-  </div>
+  </details>
 
   <!-- Grade II - Upcoming -->
-  <div class="year-card upcoming">
-    <div class="year-header">
+  <details class="year-card year-details upcoming" open>
+    <summary class="year-summary">
       <div>
         <h2>2026-27</h2>
         <span class="grade-badge">Grade II - Upcoming</span>
       </div>
-      <div class="year-total" style="color: #48bb78;">Rs. 99,300*</div>
-    </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="year-total" style="color: #48bb78;">Rs. 99,300*</div>
+        <span class="chevron">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <div class="toggle-hint">Tap to view breakdown</div>
+    </summary>
 
     <div class="fee-table-section">
       <h3>Tuition Fees</h3>
@@ -308,7 +333,7 @@
       <span class="gt-label">Grade II Estimated Total</span>
       <span class="gt-amount" style="color: #48bb78;">Rs. 99,300*</span>
     </div>
-  </div>
+  </details>
 
   <div style="text-align: center; font-size: 0.7rem; opacity: 0.3; margin-top: 8px;">
     *Estimated. Additional expenses (shoes, activities, annual day, etc.) will be added as they come.
