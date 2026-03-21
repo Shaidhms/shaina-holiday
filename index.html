@@ -124,6 +124,51 @@
     opacity: 0.8;
   }
 
+  /* Progress Tracker */
+  .progress-tracker {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .progress-block {
+    text-align: left;
+  }
+
+  .progress-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .progress-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    background: linear-gradient(90deg, #667eea, #f093fb);
+  }
+
+  .progress-bar-fill.summer {
+    background: linear-gradient(90deg, #38a169, #48bb78);
+  }
+
+  .progress-sub {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
   /* Calendar Grid */
   .section {
     max-width: 1100px;
@@ -896,9 +941,83 @@
           <span class="label">Total Days</span>
         </div>
       </div>
+
+      <div id="progress-tracker" class="progress-tracker"></div>
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  const shortStart = new Date(2026, 2, 19); // Mar 19
+  const shortEnd = new Date(2026, 3, 5);    // Apr 5
+  const summerStart = new Date(2026, 3, 23); // Apr 23
+  const summerEnd = new Date(2026, 5, 3);    // Jun 3
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  function daysBetween(a, b) {
+    return Math.floor((b - a) / (1000 * 60 * 60 * 24));
+  }
+
+  const tracker = document.getElementById('progress-tracker');
+  let html = '';
+
+  // Short Break progress
+  if (today >= shortStart && today <= shortEnd) {
+    const gone = daysBetween(shortStart, today) + 1;
+    const total = 18;
+    const pct = Math.round((gone / total) * 100);
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Short Break: Day ${gone} of ${total}</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%; background: linear-gradient(90deg, #667eea, #f093fb);"></div></div>
+        <div class="progress-sub">${total - gone} days remaining</div>
+      </div>`;
+  } else if (today > shortEnd) {
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Short Break: Completed!</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%; background: linear-gradient(90deg, #667eea, #f093fb);"></div></div>
+      </div>`;
+  } else {
+    const daysUntil = daysBetween(today, shortStart);
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Short Break: Starts in ${daysUntil} days</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
+      </div>`;
+  }
+
+  // Summer Vacation progress
+  if (today >= summerStart && today <= summerEnd) {
+    const gone = daysBetween(summerStart, today) + 1;
+    const total = 42;
+    const pct = Math.round((gone / total) * 100);
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Summer Vacation: Day ${gone} of ${total}</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill summer" style="width:${pct}%;"></div></div>
+        <div class="progress-sub">${total - gone} days remaining</div>
+      </div>`;
+  } else if (today > summerEnd) {
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Summer Vacation: Completed!</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill summer" style="width:100%;"></div></div>
+      </div>`;
+  } else {
+    const daysUntil = daysBetween(today, summerStart);
+    html += `
+      <div class="progress-block">
+        <div class="progress-label">Summer Vacation: Starts in ${daysUntil} days</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill summer" style="width:0%;"></div></div>
+      </div>`;
+  }
+
+  tracker.innerHTML = html;
+})();
+</script>
 
 <!-- 18-Day Calendar -->
 <details class="collapsible" open>
