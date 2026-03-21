@@ -290,11 +290,60 @@
   .day-card .day-num {
     font-size: 1.6rem;
     font-weight: 800;
-    opacity: 0.05;
+    opacity: 0.12;
     position: absolute;
     top: 6px;
     right: 10px;
     color: #1a1a1a;
+  }
+
+  /* Past days */
+  .day-card.past {
+    opacity: 0.55;
+  }
+
+  .day-card.past::after {
+    content: 'DONE';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #5a9a6a;
+    background: #eaf5ed;
+    padding: 2px 7px;
+    border-radius: 3px;
+    z-index: 2;
+  }
+
+  .day-card.past .day-num {
+    display: none;
+  }
+
+  /* Today */
+  .day-card.today {
+    border: 2px solid #e8734a;
+    box-shadow: 0 2px 12px rgba(232,115,74,0.12);
+  }
+
+  .day-card.today::after {
+    content: 'TODAY';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #e8734a;
+    background: #fef0e1;
+    padding: 2px 7px;
+    border-radius: 3px;
+    z-index: 2;
+  }
+
+  .day-card.today .day-num {
+    display: none;
   }
 
   .day-card .day-name {
@@ -1250,6 +1299,29 @@
   </div>
   </div>
 </details>
+
+<script>
+(function() {
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var months = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5};
+  document.querySelectorAll('.day-card').forEach(function(card) {
+    var dateEl = card.querySelector('.date');
+    if (!dateEl) return;
+    var parts = dateEl.textContent.trim().split(' ');
+    var m = months[parts[0]];
+    var d = parseInt(parts[1]);
+    if (m === undefined || isNaN(d)) return;
+    var cardDate = new Date(2026, m, d);
+    cardDate.setHours(0,0,0,0);
+    if (cardDate < today) {
+      card.classList.add('past');
+    } else if (cardDate.getTime() === today.getTime()) {
+      card.classList.add('today');
+    }
+  });
+})();
+</script>
 
 <!-- Activity Ideas -->
 <details class="collapsible">
