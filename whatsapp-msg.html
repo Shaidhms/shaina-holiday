@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message for Sana</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .card {
+    width: 420px;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    padding: 28px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .card-header h1 {
+    position: relative;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .card-header p {
+    position: relative;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+  }
+
+  .card-body {
+    padding: 28px;
+  }
+
+  .greeting {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    color: #ecc94b;
+    margin-bottom: 16px;
+  }
+
+  .msg-text {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .msg-text .highlight {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .link-box {
+    background: rgba(102,126,234,0.1);
+    border: 1px solid rgba(102,126,234,0.25);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .link-box .link-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #667eea;
+    margin-bottom: 6px;
+  }
+
+  .link-box .link-url {
+    font-size: 0.75rem;
+    color: #63b3ed;
+    word-break: break-all;
+  }
+
+  .items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .items li {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    padding: 6px 0;
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #48bb78;
+  }
+
+  .summer-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .moment {
+    background: rgba(236,201,75,0.08);
+    border: 1px solid rgba(236,201,75,0.15);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+
+  .moment .moment-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ecc94b;
+    margin-bottom: 6px;
+  }
+
+  .moment p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  .sign-off {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+  }
+
+  .sign-off .name {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: #f093fb;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <h1>Shaina's Holiday Plan</h1>
+    <p>18-day break + Summer vacation</p>
+  </div>
+
+  <div class="card-body">
+    <div class="greeting">Assalamu Alaikum Sana,</div>
+
+    <div class="msg-text">
+      Made a full holiday plan for Shaina jaan. <span class="highlight">18-day break (Mar 19 - Apr 5)</span> aur <span class="highlight">summer vacation (Apr 23 - Jun 3)</span> dono ka plan hai.
+    </div>
+
+    <div class="link-box">
+      <div class="link-label">Full Plan</div>
+      <div class="link-url">shaidhms.github.io/shaina-holiday</div>
+    </div>
+
+    <div class="msg-text">Is break mein ye karna hai:</div>
+
+    <ul class="items">
+      <li>Quran class at Masjid-e Zohra, Mon-Fri 5-5:30 PM, next week se start hoga</li>
+      <li>Swimming class for both of us, Sunday ko jaake dekhunga</li>
+      <li>Aadhaar card - Mar 30 ko leave hai, le jaaunga</li>
+      <li>Passport bhi karwa denge</li>
+      <li>School fee Apr 1 ko, Rs. 34,300 (Term I + transport + uniform)</li>
+    </ul>
+
+    <div class="summer-note">
+      Summer mein cycling sikhaenge, thoda coding, swimming aur Quran continue.
+    </div>
+
+    <div class="moment">
+      <div class="moment-label">Today's moment</div>
+      <p>Aaj pehli baar battery car mein ride ki lobby mein! You should've seen her face darling.</p>
+    </div>
+
+    <div class="sign-off">
+      Open karo link, kuch add karna ho toh batao
+      <div class="name">- Your Shaid</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
